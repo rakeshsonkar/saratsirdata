@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package in.ifms.employee.config;
+
+/**
+ * @author hp
+ *
+ */
+public class HibernateConfig {
+
+	/**
+	 * 
+	 */
+	public HibernateConfig() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;helidon-jpa/src/main/resources/resources.ddl&apos; to &apos;greeting.ddl&apos;" description="Rename resource &apos;resources.ddl&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/resources.ddl" name="greeting.ddl" stamp="1653563625839" updateReferences="true"/>
+</session>

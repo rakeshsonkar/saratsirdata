@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package in.ifms.employee.exception;
+
+/**
+ * @author hp
+ *
+ */
+public class ErrorDetails {
+
+	/**
+	 * 
+	 */
+	public ErrorDetails() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

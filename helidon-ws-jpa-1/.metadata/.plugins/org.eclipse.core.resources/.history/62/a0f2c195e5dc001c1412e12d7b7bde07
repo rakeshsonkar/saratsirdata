@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package io.helidon.example.jpa;
+
+/**
+ * @author hp
+ *
+ */
+public class Greeting {
+
+}

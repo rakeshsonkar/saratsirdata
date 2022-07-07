@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package in.ifms.employee.common.constants;
+
+/**
+ * @author hp
+ *
+ *         ApiPath holds constants for url, path end-point names
+ * 
+ */
+public final class ApiPath {
+
+	/** base path for employee module */
+	public static final String EMP_API_BASE_PATH = "/employee";
+
+	end point path for
+	public static final String EMP_API_PATH_CREATE_UPDATE = "/{type}";
+
+}

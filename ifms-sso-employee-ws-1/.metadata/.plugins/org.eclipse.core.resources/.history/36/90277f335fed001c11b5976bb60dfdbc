@@ -1,0 +1,161 @@
+/**
+ * 
+ */
+package in.ifms.employee.response;
+
+import java.io.Serializable;
+import java.util.Objects;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
+
+/**
+ * @author Sharat Pradhan
+ *
+ *
+ *         This is the IFMSResponse class for sending System Response codes and
+ *         messages as a part of HTTP Response Body
+ */
+@JsonInclude(value = Include.NON_EMPTY)
+@JsonRootName(value = "response")
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class IFMSResponse implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@JsonProperty(value = "status")
+	private String responseStatus;
+
+	@JsonProperty(value = "statusCode")
+	private String responseCode;
+
+	@JsonProperty(value = "message")
+	private String responseMessage;
+	
+	@JsonProperty(value = "exception")
+	private String exception;
+
+	private Object data;
+
+	/**
+	 * 
+	 */
+	public IFMSResponse() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param responseStatus
+	 * @param responseCode
+	 * @param responseMessage
+	 * @param data
+	 */
+	public IFMSResponse(String responseStatus, String responseCode, String responseMessage, Object data) {
+		super();
+		this.responseStatus = responseStatus;
+		this.responseCode = responseCode;
+		this.responseMessage = responseMessage;
+		this.data = data;
+	}
+
+	/**
+	 * @param responseStatus
+	 * @param responseCode
+	 * @param responseMessage
+	 */
+	public IFMSResponse(String responseStatus, String responseCode, String responseMessage) {
+		super();
+		this.responseStatus = responseStatus;
+		this.responseCode = responseCode;
+		this.responseMessage = responseMessage;
+	}
+
+	/**
+	 * @return the responseStatus
+	 */
+	public String getResponseStatus() {
+		return responseStatus;
+	}
+
+	/**
+	 * @param responseStatus the responseStatus to set
+	 */
+	public void setResponseStatus(String responseStatus) {
+		this.responseStatus = responseStatus;
+	}
+
+	/**
+	 * @return the responseCode
+	 */
+	public String getResponseCode() {
+		return responseCode;
+	}
+
+	/**
+	 * @param responseCode the responseCode to set
+	 */
+	public void setResponseCode(String responseCode) {
+		this.responseCode = responseCode;
+	}
+
+	/**
+	 * @return the responseMessage
+	 */
+	public String getResponseMessage() {
+		return responseMessage;
+	}
+
+	/**
+	 * @param responseMessage the responseMessage to set
+	 */
+	public void setResponseMessage(String responseMessage) {
+		this.responseMessage = responseMessage;
+	}
+
+	/**
+	 * @return the data
+	 */
+	public Object getData() {
+		return data;
+	}
+
+	/**
+	 * @param data the data to set
+	 */
+	public void setData(Object data) {
+		this.data = data;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(data, responseCode, responseMessage, responseStatus);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		IFMSResponse other = (IFMSResponse) obj;
+		return Objects.equals(data, other.data) && Objects.equals(responseCode, other.responseCode)
+				&& Objects.equals(responseMessage, other.responseMessage)
+				&& Objects.equals(responseStatus, other.responseStatus);
+	}
+
+	@Override
+	public String toString() {
+		return "IFMSResponse [responseStatus=" + responseStatus + ", responseCode=" + responseCode
+				+ ", responseMessage=" + responseMessage + ", data=" + data + "]";
+	}
+
+}

@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package in.ifms.employee.constant;
+
+/**
+ * @author hp
+ *
+ */
+public enum ApiStatus {
+
+}

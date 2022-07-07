@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2018, 2020 Oracle and/or its affiliates. Licensed under 
+	the Apache License, Version 2.0 (the "License"); you may not use this file 
+	except in compliance with the License. You may obtain a copy of the License 
+	at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable 
+	law or agreed to in writing, software distributed under the License is distributed 
+	on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either 
+	express or implied. See the License for the specific language governing permissions 
+	and limitations under the License. -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>io.helidon.applications</groupId>
+		<artifactId>helidon-mp</artifactId>
+		<version>2.0.1</version>
+	</parent>
+	<groupId>in.ifms.employee</groupId>
+	<artifactId>ifms-employee-jpa</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>IFMS_Employee</name>
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc11 -->
+		<!-- oracle database driver -->
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc11</artifactId>
+			<version>21.1.0.0</version>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- HIkari connection pool -->
+		<dependency>
+			<groupId>io.helidon.integrations.cdi</groupId>
+			<artifactId>helidon-integrations-cdi-datasource-hikaricp</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- JTA-compliant Transaction manager Helidon has support for the Narayana 
+			transaction engine. This component will allow your JPA application to not 
+			have to worry about setting up and tearing down transactions manually, or 
+			doing the right thing when rollbacks occur -->
+		<dependency>
+			<groupId>io.helidon.integrations.cdi</groupId>
+			<artifactId>helidon-integrations-cdi-jta-weld</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.helidon.integrations.cdi</groupId>
+			<artifactId>helidon-integrations-cdi-jpa</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- Hibernate implementation of JPA OR JPA Provider -->
+		<dependency>
+			<groupId>io.helidon.integrations.cdi</groupId>
+			<artifactId>helidon-integrations-cdi-hibernate</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- provider-independent JPA and JTA APIs used during only compile-time -->
+		<dependency>
+			<groupId>jakarta.persistence</groupId>
+			<artifactId>jakarta.persistence-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.activation</groupId>
+			<artifactId>jakarta.activation-api</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.transaction</groupId>
+			<artifactId>jakarta.transaction-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- <dependency> <groupId>jakarta.transaction</groupId> <artifactId>jakarta.transaction-api</artifactId> 
+			<version>2.0.1</version>$NO-MVN-MAN-VER$ <scope>provided</scope> </dependency> -->
+		<!-- <dependency> <groupId>javax.transaction</groupId> <artifactId>javax.transaction-api</artifactId> 
+			<version>1.2</version> <scope>provided</scope> </dependency> -->
+
+		<dependency>
+			<groupId>io.helidon.microprofile.bundles</groupId>
+			<artifactId>helidon-microprofile</artifactId>
+			<!-- excluding the yasson dependency and using jackson dependency -->
+			<exclusions>
+				<exclusion>
+					<groupId>org.glassfish.jersey.media</groupId>
+					<artifactId>jersey-media-json-binding</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss</groupId>
+			<artifactId>jandex</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+		<!-- dependency for jackon annotations -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.13.3</version>
+		</dependency>
+		        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-binding</artifactId>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.eclipse</groupId>
+                    <artifactId>yasson</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-base</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-json-provider</artifactId>
+        </dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-libs</id>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- jandex plugin for creating the index so that the Helidon MP OpenAPI 
+				runtime automatically creates one in memory during app start-up. If not done, 
+				This slows down your app start-up and, depending on how CDI is configured, 
+				might inadvertently miss information. -->
+			<plugin>
+				<groupId>org.jboss.jandex</groupId>
+				<artifactId>jandex-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>make-index</id>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

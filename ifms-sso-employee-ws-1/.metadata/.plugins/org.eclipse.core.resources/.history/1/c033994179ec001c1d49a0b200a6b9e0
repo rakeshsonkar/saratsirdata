@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package in.ifms.employee.common.constants;
+
+/**
+ * @author hp
+ *
+ *         SprocName enum holds PL/SQL Stored Procedure names
+ * 
+ */
+public final class SprocName {
+
+		public static final String IFMS_EMP_BASE_PATH = "/employee";
+		
+		public static final String IFMS_EMP_BASE_PATH = "/employee";
+	
+
+}

@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+package in.ifms.employee.common.constants;
+
+/**
+ * @author hp
+ *
+ *         Stored Procedure enum holds PL/SQL sproc names
+ */
+public enum SprocName {
+
+	GET_TOTAL_EMPLOYEES_BY_DEPT("GET_TOTAL_EMPLOYEES_BY_DEPT"),
+
+	;
+
+	/* placeholder for sprocName */
+	String sprocName;
+
+	private SprocName(String sprocName) {
+		this.sprocName = sprocName;
+	}
+
+	public String getSprocName() {
+		return sprocName;
+	}
+
+	public void setSprocName(String sprocName) {
+		this.sprocName = sprocName;
+	}
+
+}

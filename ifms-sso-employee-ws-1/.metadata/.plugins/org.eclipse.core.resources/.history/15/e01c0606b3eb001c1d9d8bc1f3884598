@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package in.ifms.employee.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import in.ifms.employee.common.constants.SprocName;
+import in.ifms.employee.entity.Employee;
+
+/**
+ * @author hp
+ *
+ */
+public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
+
+	/**
+	 * calling sproc directly by using the Query annotation
+	 */
+	@Query(value = SprocName.CALL_TOTAL_EMPLOYEES_BY_DEPT, nativeQuery = true)
+	List<Employee> findCarsAfterYear(@Param("year_in") Integer year_in);
+
+}

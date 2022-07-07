@@ -1,0 +1,20 @@
+show user;
+
+--create employee
+create TABLE EMPLOYEE(
+    EMPLOYEE_ID INT,
+    EMPLOYEE_NAME VARCHAR2(10),
+    EMAIL VARCHAR2(30),
+    PHONE_NUM VARCHAR2(20),
+    primary key(EMPLOYEE_ID)
+);
+
+--EMPLOYEE sequence
+CREATE SEQUENCE EMPLOYEE_ID_SEQ
+  INCREMENT BY 1
+  MINVALUE 1001
+  MAXVALUE 9999
+  NOCACHE
+  NOCYCLE;
+  
+  select * from employee;

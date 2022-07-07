@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+                                 http://xmlns.jcp.org/xml/ns/persistence/persistence.xsd">
+	<persistence-unit name="employeePersistenceUnit"
+		transaction-type="JTA">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<jta-data-source>employeeDataSource</jta-data-source>
+		<class>in.ifms.employee.entity.Employee</class>
+		<!-- based on the entity marked with entity annotation all classes will be scanned even if not specified -->
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521/xe" />
+			<property name="javax.persistence.jdbc.user" value="APPUSER" />
+			<property name="javax.persistence.jdbc.password" value="appuserpwd" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect" />
+			<property name="hibernate.archive.autodetection" value="class" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<!-- using C3P0 connection provider for connection pool -->
+			
+			<!-- setting the maximum and minimum number of connections -->
+			<!-- <property name="hibernate.connection.provider_class" value="com.zaxxer.hikari.hibernate.HikariConnectionProvider" />
+			<property name="hibernate.hikari.minimumIdle">5</property>
+			<property name="hibernate.hikari.maximumPoolSize">20</property>
+			<property name="hibernate.hikari.idleTimeout">20000</property>
+			<property name="hibernate.hikari.connectionTimeout">1800</property> --> 
+		</properties>
+	</persistence-unit>
+</persistence>

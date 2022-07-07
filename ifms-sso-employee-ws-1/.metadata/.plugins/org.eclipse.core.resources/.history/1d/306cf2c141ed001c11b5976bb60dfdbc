@@ -1,0 +1,33 @@
+/**
+ * 
+ */
+package in.ifms.employee.exception;
+
+import java.time.LocalDateTime;
+
+/**
+ * 
+ * This class stores the error information occurred in the system
+ * 
+ * @author hp
+ *
+ */
+public class ErrorDetails {
+	
+	/** time stamp of the error occurred */
+	private LocalDateTime timeStamp;
+	
+	/** short description message of the error */
+	private String message;
+	
+	/** detailed description message of the error */
+	private String details;
+
+	/**
+	 * 
+	 */
+	public ErrorDetails() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

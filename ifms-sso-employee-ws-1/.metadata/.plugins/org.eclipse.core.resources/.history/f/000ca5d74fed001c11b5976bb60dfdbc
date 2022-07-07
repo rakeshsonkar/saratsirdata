@@ -1,0 +1,45 @@
+/**
+ * 
+ */
+package in.ifms.employee.exception;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.context.request.WebRequest;
+
+/**
+ * 
+ * This class is the Request handler for the Exceptions thrown by the IFMS System
+ * 
+ * 
+ * @author hp
+ *
+ */
+@ControllerAdvice
+public class GlobalExceptionHandler {
+
+	/**
+	 * 
+	 */
+	public GlobalExceptionHandler() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<?> resourceNotFound(ErrorDetails errorDetails, WebRequest webRequest) {
+		
+		
+		
+		return null;
+	}
+	
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<?> globalException(ErrorDetails errorDetails, WebRequest webRequest) {
+		
+		
+		
+		return null;
+	}
+
+}

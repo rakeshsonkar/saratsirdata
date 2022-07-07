@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\sharat\data\sts-workspaces\helidon-ws-jpa-1\.metadata\.plugins\org.eclipse.jdt.core
+1473134700.index
+1865797976.index
+3368309686.index

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalStateException"/>
+    <fullyQualifiedTypeName name="javax.persistence.TransactionRequiredException"/>
+    <fullyQualifiedTypeName name="javax.persistence.QueryTimeoutException"/>
+    <fullyQualifiedTypeName name="javax.persistence.PersistenceException"/>
+    <fullyQualifiedTypeName name="in.ifms.employee.common.constants.SQLQuery"/>
+</qualifiedTypeNameHistroy>

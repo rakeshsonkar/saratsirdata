@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package in.ifms.employee.exception;
+
+/**
+ * @author hp
+ *
+ */
+public class IfmsBaseException extends RuntimeException {
+
+}

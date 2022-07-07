@@ -1,0 +1,58 @@
+/**
+ * 
+ */
+package in.ifms.employee.response;
+
+import java.io.Serializable;
+import java.util.Objects;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
+
+import in.ifms.employee.constant.ApiStatus;
+import in.ifms.employee.constant.IFMSResponseCode;
+
+/**
+ * @author Sharat Pradhan
+ *
+ *
+ *         This is the IFMSResponse class for sending System Response codes and
+ *         messages as a part of HTTP Response Body
+ */
+@JsonInclude(value = Include.NON_EMPTY)
+@JsonRootName(value = "response")
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class IFMSResponse implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@JsonProperty(value = "status")
+	private ApiStatus responseStatus;
+
+	@JsonProperty(value = "statusCode")
+	private IFMSResponseCode responseCode;
+
+	@JsonProperty(value = "exception")
+	private String exception;
+
+	private Object data;
+
+	/**
+	 * 
+	 */
+	public IFMSResponse() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	
+
+	
+
+}

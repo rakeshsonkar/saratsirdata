@@ -1,0 +1,81 @@
+/**
+ * 
+ */
+package in.ifms.employee.controller;
+
+import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.Dependent;
+import javax.inject.Inject;
+import javax.inject.Singleton;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+
+import in.ifms.employee.dto.EmployeeDTO;
+import in.ifms.employee.service.EmployeeService;
+
+/**
+ * @author hp
+ *
+ */
+@Singleton
+@ApplicationScoped
+@Dependent
+public class EmployeeController {
+
+	private EmployeeService employeeService;
+
+	/**
+	 * 
+	 */
+	public EmployeeController() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Inject
+	public EmployeeController(EmployeeService employeeService) {
+		this.employeeService = employeeService;
+	}
+
+	/*
+	 * @GET
+	 * 
+	 * @Path("response/{salutation}")
+	 * 
+	 * @Produces("text/plain")
+	 * 
+	 * @Transactional public String getResponse(@PathParam("salutation") String
+	 * salutation) { final Employee employee =
+	 * this.employeeRepository.find(Employee.class, salutation); final String
+	 * returnValue; if (greeting == null) { returnValue = null; } else { returnValue
+	 * = greeting.getResponse(); } return returnValue; }
+	 */
+
+	@GET
+	@Path("/employee/{id}")
+	@Produces("text/plain")
+	// @Transactional
+	public EmployeeDTO getEmployeeDetails(@PathParam("id") String requestStr) {
+		Integer requestId = null;
+		if (requestStr != null)
+			requestId = Integer.parseInt(requestStr.strip());
+		EmployeeDTO employeeDTO = employeeService.getEmployeeById(requestId);
+		return employeeDTO;
+	}
+
+	@GET
+	@Path("/emp")
+	@Produces("application/json")
+	public String getResponse() {
+		return "{101 : john}";
+	}
+	
+	@GET
+	@Path("/emp")
+	@Produces("application/json")
+	public String getMessage() {
+		return "{101 : john}";
+	}
+
+}

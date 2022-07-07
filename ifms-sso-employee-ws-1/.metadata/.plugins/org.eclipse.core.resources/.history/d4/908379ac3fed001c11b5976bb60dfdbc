@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package in.ifms.employee.controller;
+
+/**
+ * @author hp
+ *
+ */
+public class CustomerController {
+
+	/**
+	 * 
+	 */
+	public CustomerController() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

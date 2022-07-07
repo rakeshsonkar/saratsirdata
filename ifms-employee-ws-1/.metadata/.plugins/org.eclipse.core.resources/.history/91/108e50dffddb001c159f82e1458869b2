@@ -1,0 +1,64 @@
+/**
+ * 
+ */
+package in.ifms.employee.repository;
+
+import java.io.Serializable;
+
+import javax.enterprise.context.ApplicationScoped;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.transaction.Transactional;
+
+import in.ifms.employee.entity.Employee;
+
+/**
+ * @author hp
+ *
+ */
+@ApplicationScoped
+public class EmployeeRepository implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/* PersistenceContext marks that the EntityManager is container managed */
+	@PersistenceContext
+	protected EntityManager entityManager;
+
+	/**
+	 * 
+	 */
+	public EmployeeRepository() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/*
+	 * @Inject public EmployeeRepository(EntityManager entityManager) { super();
+	 * this.entityManager = entityManager; }
+	 */
+
+	public Employee getEmployeeById(Integer type) {
+		Employee employee = entityManager.find(Employee.class, type);
+		return employee;
+	}
+
+	/*
+	 * public List<Employee> getEmployeeById(Integer type) { Employee employee =
+	 * entityManager.find(Employee.class, type); entityManager. return employee; }
+	 */
+
+	@Transactional
+	public Employee createOrUpdate(Employee employee) {
+		entityManager.persist(employee);
+		return employee;
+	}
+
+	public Employee getEmployeeById(String queryStr) {
+		Query query = entityManager.createQuery(queryStr);
+		Employee employee = (Employee) query.setParameter("employeeId", queryStr).getSingleResult();
+		return employee;
+	}
+}

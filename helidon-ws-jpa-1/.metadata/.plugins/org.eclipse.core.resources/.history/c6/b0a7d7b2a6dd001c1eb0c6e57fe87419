@@ -1,0 +1,158 @@
+package in.ifms.employee.dto;
+
+import java.io.Serializable;
+import java.util.List;
+
+import in.ifms.employee.response.IFMSResponse;
+
+/**
+ * @author hp
+ *
+ */
+public class EmployeeDTO implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/* placeholder for employeeId */
+	private Integer employeeId;
+
+	/* placeholder for employeeId */
+	private String employeeName;
+
+	/* placeholder for employeeId */
+	private String email;
+	
+	/* placeholder for addressDTOList */
+	private List<AddressDTO> addressDTOList;
+	
+
+	/* placeholder for type */
+	private String type;
+
+	private IFMSResponse ifmsResponse;
+
+	/**
+	 * 
+	 */
+	public EmployeeDTO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param ifmsResponse
+	 */
+	public EmployeeDTO(IFMSResponse ifmsResponse) {
+		super();
+		this.ifmsResponse = ifmsResponse;
+	}
+
+	/**
+	 * @param employeeId
+	 * @param employeeName
+	 * @param addressId
+	 * @param email
+	 */
+	public EmployeeDTO(Integer employeeId, String employeeName, String addressId, String email) {
+		super();
+		this.employeeId = employeeId;
+		this.employeeName = employeeName;
+		this.addressId = addressId;
+		this.email = email;
+	}
+
+	@Override
+	public String toString() {
+		return "EmployeeDTO [employeeId=" + employeeId + ", employeeName=" + employeeName + ", addressId=" + addressId
+				+ ", email=" + email + ", type=" + type + ", ifmsResponse=" + ifmsResponse + "]";
+	}
+
+	/**
+	 * @return the employeeId
+	 */
+	public Integer getEmployeeId() {
+		return employeeId;
+	}
+
+	/**
+	 * @param employeeId the employeeId to set
+	 */
+	public void setEmployeeId(Integer employeeId) {
+		this.employeeId = employeeId;
+	}
+
+	/**
+	 * @return the employeeName
+	 */
+	public String getEmployeeName() {
+		return employeeName;
+	}
+
+	/**
+	 * @param employeeName the employeeName to set
+	 */
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+	}
+
+	/**
+	 * @return the addressId
+	 */
+	public String getAddressId() {
+		return addressId;
+	}
+
+	/**
+	 * @param addressId the addressId to set
+	 */
+	public void setAddressId(String addressId) {
+		this.addressId = addressId;
+	}
+
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	/**
+	 * @return the ifmsResponse
+	 */
+	public IFMSResponse getIfmsResponse() {
+		return ifmsResponse;
+	}
+
+	/**
+	 * @param ifmsResponse the ifmsResponse to set
+	 */
+	public void setIfmsResponse(IFMSResponse ifmsResponse) {
+		this.ifmsResponse = ifmsResponse;
+	}
+
+	/**
+	 * @return the serialversionuid
+	 */
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+}

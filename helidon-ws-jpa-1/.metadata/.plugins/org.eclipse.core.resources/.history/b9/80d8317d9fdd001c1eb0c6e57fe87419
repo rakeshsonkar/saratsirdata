@@ -1,0 +1,11 @@
+
+# Application properties. This is the default greeting
+app.greeting=Hello
+
+# Microprofile server properties
+server.port=8080
+server.host=0.0.0.0
+
+
+mp.openapi.filter=io.helidon.microprofile.examples.openapi.basic.internal.SimpleAPIFilter
+mp.openapi.model.reader=io.helidon.microprofile.examples.openapi.basic.internal.SimpleAPIModelReader

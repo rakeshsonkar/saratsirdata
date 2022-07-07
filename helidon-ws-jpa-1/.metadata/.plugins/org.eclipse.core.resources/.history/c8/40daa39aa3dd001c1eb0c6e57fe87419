@@ -1,0 +1,146 @@
+/**
+ * 
+ */
+package in.ifms.employee.entity;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+/**
+ * @author hp
+ *
+ */
+@Entity
+@Table(name = "ADDRESS")
+public class Address implements Serializable {
+	
+	 ADDRESS_ID VARCHAR2(10),
+	    EMP_ID INT REFERENCES EMPLOYEE(EMP_ID),
+	    STREET VARCHAR2(30),
+	    CITY VARCHAR2(10),
+	    COUNTRY VARCHAR2(15),
+	    primary key(ADDRESS_ID)
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/* reflects the EMP_ID column of the table */
+	@Id
+	@GeneratedValue(generator = "EMP_ID_SEQ", strategy = GenerationType.SEQUENCE)
+	//allocation size (increment size) is default to 50
+	//hence must be provided
+	@SequenceGenerator(name = "ADD_ID_SEQ", allocationSize = 1)
+	@Column(insertable = true, name = "ADDRESS_ID", nullable = false, updatable = false)
+	private Integer addressId;
+	
+	/* reflects the EMP_NAME column of the table */
+	@Column(insertable = true, name = "ADDRESS_ID", nullable = false, updatable = false)
+	private Integer employeeId;
+
+	/* reflects the EMP_NAME column of the table */
+	@Column(insertable = true, name = "EMP_NAME", nullable = false, updatable = false)
+	private String employeeName;
+
+	/* reflects the ADDRESS_ID column of the table */
+	@Column(insertable = true, name = "ADDRESS_ID", nullable = false, updatable = false)
+	private String addressId;
+
+	/* reflects the EMAIL column of the table */
+	@Column(insertable = true, name = "EMAIL", nullable = false, updatable = false)
+	private String email;
+
+	/**
+	 * 
+	 */
+	public Address() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param employeeId
+	 * @param employeeName
+	 * @param addressId
+	 * @param email
+	 */
+	public Address(Integer employeeId, String employeeName, String addressId, String email) {
+		super();
+		this.employeeId = employeeId;
+		this.employeeName = employeeName;
+		this.addressId = addressId;
+		this.email = email;
+	}
+
+	/**
+	 * @return the serialversionuid
+	 */
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	/**
+	 * @return the employeeId
+	 */
+	public Integer getEmployeeId() {
+		return employeeId;
+	}
+
+	/**
+	 * @param employeeId the employeeId to set
+	 */
+	public void setEmployeeId(Integer employeeId) {
+		this.employeeId = employeeId;
+	}
+
+	/**
+	 * @return the employeeName
+	 */
+	public String getEmployeeName() {
+		return employeeName;
+	}
+
+	/**
+	 * @param employeeName the employeeName to set
+	 */
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+	}
+
+	/**
+	 * @return the addressId
+	 */
+	public String getAddressId() {
+		return addressId;
+	}
+
+	/**
+	 * @param addressId the addressId to set
+	 */
+	public void setAddressId(String addressId) {
+		this.addressId = addressId;
+	}
+
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+}

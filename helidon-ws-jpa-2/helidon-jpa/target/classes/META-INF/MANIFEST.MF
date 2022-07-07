@@ -1,0 +1,104 @@
+Manifest-Version: 1.0
+Built-By: hp
+Build-Jdk: 17.0.2
+Class-Path: libs/helidon-microprofile-2.0.0-M1.jar libs/helidon-micropro
+ file-core-2.0.0-M1.jar libs/helidon-microprofile-server-2.0.0-M1.jar li
+ bs/helidon-webserver-2.0.0-M1.jar libs/helidon-common-http-2.0.0-M1.jar
+  libs/helidon-media-common-2.0.0-M1.jar libs/helidon-common-key-util-2.
+ 0.0-M1.jar libs/opentracing-api-0.33.0.jar libs/opentracing-noop-0.33.0
+ .jar libs/netty-codec-http-4.1.45.Final.jar libs/netty-common-4.1.45.Fi
+ nal.jar libs/netty-buffer-4.1.45.Final.jar libs/netty-transport-4.1.45.
+ Final.jar libs/netty-resolver-4.1.45.Final.jar libs/netty-codec-4.1.45.
+ Final.jar libs/netty-codec-http2-4.1.45.Final.jar libs/netty-handler-4.
+ 1.45.Final.jar libs/helidon-webserver-jersey-2.0.0-M1.jar libs/helidon-
+ jersey-server-2.0.0-M1.jar libs/jersey-server-2.29.1.jar libs/jakarta.v
+ alidation-api-2.0.2.jar libs/helidon-common-service-loader-2.0.0-M1.jar
+  libs/javax.json-1.1.2.jar libs/javax.json-api-1.1.2.jar libs/helidon-m
+ edia-jsonp-common-2.0.0-M1.jar libs/helidon-config-yaml-2.0.0-M1.jar li
+ bs/snakeyaml-1.24.jar libs/jersey-weld2-se-2.29.1.jar libs/jersey-cdi1x
+ -2.29.1.jar libs/jakarta.ws.rs-api-2.1.6.jar libs/helidon-jersey-media-
+ jsonp-2.0.0-M1.jar libs/jersey-media-json-processing-2.29.1.jar libs/js
+ onp-jaxrs-1.1.5.jar libs/helidon-config-testing-2.0.0-M1.jar libs/junit
+ -jupiter-api-5.1.0.jar libs/apiguardian-api-1.0.0.jar libs/opentest4j-1
+ .0.0.jar libs/junit-platform-commons-1.1.0.jar libs/hamcrest-all-1.3.ja
+ r libs/helidon-microprofile-config-2.0.0-M1.jar libs/helidon-config-2.0
+ .0-M1.jar libs/javax.annotation-api-1.3.1.jar libs/helidon-common-2.0.0
+ -M1.jar libs/helidon-common-reactive-2.0.0-M1.jar libs/helidon-common-m
+ apper-2.0.0-M1.jar libs/helidon-common-media-type-2.0.0-M1.jar libs/rea
+ ctor-core-3.3.1.RELEASE.jar libs/reactive-streams-1.0.2.jar libs/helido
+ n-config-object-mapping-2.0.0-M1.jar libs/helidon-microprofile-health-2
+ .0.0-M1.jar libs/helidon-health-2.0.0-M1.jar libs/helidon-media-jsonp-s
+ erver-2.0.0-M1.jar libs/microprofile-health-api-2.1.jar libs/javax.inje
+ ct-1.jar libs/helidon-health-common-2.0.0-M1.jar libs/helidon-health-ch
+ ecks-2.0.0-M1.jar libs/helidon-microprofile-metrics-2.0.0-M1.jar libs/h
+ elidon-metrics-2.0.0-M1.jar libs/microprofile-metrics-api-2.2.jar libs/
+ helidon-microprofile-fault-tolerance-2.0.0-M1.jar libs/microprofile-fau
+ lt-tolerance-api-2.0.2.jar libs/helidon-common-metrics-2.0.0-M1.jar lib
+ s/hystrix-core-1.5.18.jar libs/archaius-core-0.4.1.jar libs/commons-con
+ figuration-1.8.jar libs/commons-lang-2.6.jar libs/commons-logging-1.1.1
+ .jar libs/rxjava-1.2.0.jar libs/HdrHistogram-2.1.9.jar libs/failsafe-2.
+ 3.1.jar libs/helidon-common-configurable-2.0.0-M1.jar libs/helidon-micr
+ oprofile-jwt-auth-2.0.0-M1.jar libs/microprofile-jwt-auth-api-1.1.1.jar
+  libs/helidon-security-jwt-2.0.0-M1.jar libs/helidon-security-util-2.0.
+ 0-M1.jar libs/helidon-security-2.0.0-M1.jar libs/opentracing-util-0.33.
+ 0.jar libs/helidon-security-integration-jersey-2.0.0-M1.jar libs/helido
+ n-security-annotations-2.0.0-M1.jar libs/helidon-microprofile-security-
+ 2.0.0-M1.jar libs/helidon-bundles-security-2.0.0-M1.jar libs/helidon-co
+ nfig-encryption-2.0.0-M1.jar libs/helidon-security-providers-header-2.0
+ .0-M1.jar libs/helidon-security-providers-http-auth-2.0.0-M1.jar libs/h
+ elidon-security-providers-http-sign-2.0.0-M1.jar libs/helidon-security-
+ providers-jwt-2.0.0-M1.jar libs/helidon-security-providers-abac-2.0.0-M
+ 1.jar libs/helidon-security-providers-oidc-2.0.0-M1.jar libs/helidon-se
+ curity-providers-oidc-common-2.0.0-M1.jar libs/helidon-security-abac-ti
+ me-2.0.0-M1.jar libs/helidon-security-abac-role-2.0.0-M1.jar libs/helid
+ on-security-abac-scope-2.0.0-M1.jar libs/helidon-security-abac-policy-2
+ .0.0-M1.jar libs/helidon-security-integration-webserver-2.0.0-M1.jar li
+ bs/helidon-security-providers-common-2.0.0-M1.jar libs/helidon-security
+ -integration-jersey-client-2.0.0-M1.jar libs/helidon-security-integrati
+ on-common-2.0.0-M1.jar libs/helidon-tracing-config-2.0.0-M1.jar libs/he
+ lidon-jersey-common-2.0.0-M1.jar libs/helidon-webclient-jaxrs-2.0.0-M1.
+ jar libs/helidon-microprofile-openapi-2.0.0-M1.jar libs/helidon-openapi
+ -2.0.0-M1.jar libs/smallrye-open-api-1.1.1.jar libs/jackson-core-2.10.0
+ .jar libs/jackson-databind-2.10.0.jar libs/jackson-annotations-2.10.0.j
+ ar libs/jackson-dataformat-yaml-2.10.0.jar libs/shrinkwrap-api-1.2.6.ja
+ r libs/commons-io-2.6.jar libs/commons-beanutils-1.9.3.jar libs/commons
+ -collections-3.2.2.jar libs/microprofile-openapi-api-1.1.2.jar libs/hel
+ idon-microprofile-rest-client-2.0.0-M1.jar libs/helidon-common-context-
+ 2.0.0-M1.jar libs/helidon-jersey-client-2.0.0-M1.jar libs/jersey-client
+ -2.29.1.jar libs/jersey-common-2.29.1.jar libs/osgi-resource-locator-1.
+ 0.3.jar libs/jersey-hk2-2.29.1.jar libs/hk2-locator-2.6.1.jar libs/aopa
+ lliance-repackaged-2.6.1.jar libs/hk2-api-2.6.1.jar libs/hk2-utils-2.6.
+ 1.jar libs/javassist-3.22.0-CR2.jar libs/jersey-mp-rest-client-2.29.1.j
+ ar libs/helidon-microprofile-tracing-2.0.0-M1.jar libs/helidon-tracing-
+ jersey-2.0.0-M1.jar libs/helidon-tracing-2.0.0-M1.jar libs/helidon-trac
+ ing-jersey-client-2.0.0-M1.jar libs/microprofile-opentracing-api-1.3.1.
+ jar libs/microprofile-rest-client-api-1.3.3.jar libs/jandex-2.1.1.Final
+ .jar libs/javax.activation-api-1.2.0.jar libs/h2-1.4.200.jar libs/helid
+ on-integrations-cdi-datasource-hikaricp-2.0.0-M1.jar libs/helidon-integ
+ rations-cdi-datasource-2.0.0-M1.jar libs/helidon-serviceconfiguration-c
+ onfig-source-2.0.0-M1.jar libs/helidon-serviceconfiguration-api-2.0.0-M
+ 1.jar libs/helidon-serviceconfiguration-hikaricp-2.0.0-M1.jar libs/Hika
+ riCP-3.4.1.jar libs/slf4j-api-1.7.26.jar libs/microprofile-config-api-1
+ .3.jar libs/helidon-integrations-cdi-jta-weld-2.0.0-M1.jar libs/helidon
+ -integrations-cdi-jta-2.0.0-M1.jar libs/jboss-transaction-spi-7.6.0.Fin
+ al.jar libs/weld-jta-3.1.2.Final.jar libs/cdi-api-2.0.jar libs/jboss-tr
+ ansaction-api_1.2_spec-1.0.0.Final.jar libs/weld-api-3.1.SP1.jar libs/w
+ eld-core-impl-3.1.2.Final.jar libs/jboss-classfilewriter-1.2.4.Final.ja
+ r libs/jboss-annotations-api_1.3_spec-1.0.0.Final.jar libs/jboss-el-api
+ _3.0_spec-1.0.13.Final.jar libs/jboss-interceptors-api_1.2_spec-1.0.0.F
+ inal.jar libs/jboss-logging-3.2.1.Final.jar libs/cdi-5.9.3.Final.jar li
+ bs/jta-5.9.3.Final.jar libs/common-5.9.3.Final.jar libs/arjuna-5.9.3.Fi
+ nal.jar libs/weld-spi-3.1.SP1.jar libs/helidon-integrations-cdi-jpa-2.0
+ .0-M1.jar libs/helidon-microprofile-cdi-2.0.0-M1.jar libs/weld-se-core-
+ 2.0.0-M1.jar libs/weld-environment-common-3.1.2.Final.jar libs/weld-pro
+ be-core-3.1.2.Final.jar libs/slf4j-jdk14-1.7.26.jar libs/helidon-integr
+ ations-cdi-delegates-2.0.0-M1.jar libs/helidon-integrations-cdi-referen
+ ce-counted-context-2.0.0-M1.jar libs/jaxb-api-2.3.0.jar libs/jaxb-core-
+ 2.3.0.1.jar libs/jaxb-impl-2.3.2.jar libs/helidon-integrations-cdi-ecli
+ pselink-2.0.0-M1.jar libs/org.eclipse.persistence.jpa-2.7.4.jar libs/ja
+ karta.persistence-2.2.2.jar libs/org.eclipse.persistence.asm-2.7.4.jar 
+ libs/org.eclipse.persistence.antlr-2.7.4.jar libs/org.eclipse.persisten
+ ce.jpa.jpql-2.7.4.jar libs/org.eclipse.persistence.core-2.7.4.jar
+Main-Class: io.helidon.microprofile.cdi.Main
+Created-By: Maven Integration for Eclipse
+

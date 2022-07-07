@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+                                 http://xmlns.jcp.org/xml/ns/persistence/persistence.xsd">
+	<persistence-unit name="employeePersistenceUnit"
+		transaction-type="JTA">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<jta-data-source>employeeDataSource</jta-data-source>
+		<class>in.ifms.employee.entity.Employee</class>
+		<class>in.ifms.employee.entity.Address</class>
+		<!-- based on the entity marked with entity annotation all classes will be scanned even if not specified -->
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+		<properties>
+			<!-- <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521/xe" />
+			<property name="javax.persistence.jdbc.user" value="appuser" />
+			<property name="javax.persistence.jdbc.password" value="appuserpwd" /> -->
+			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect" />
+			<property name="hibernate.archive.autodetection" value="class" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update" /> -->
+			
+			
+			 <!-- <property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
+            <property name="connection.provider_class" value="org.hibernate.c3p0.internal.C3P0ConnectionProvider"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect" />
+            <property name="hibernate.archive.autodetection" value="class" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="update" /> -->
+			<!-- using C3P0 connection provider for connection pool -->
+			
+			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
+            <property name="connection.provider_class" value="org.hibernate.c3p0.internal.C3P0ConnectionProvider"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect" />
+            <property name="hibernate.archive.autodetection" value="class" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="validate" />
+            <property name="hibernate.c3p0.min_size" value="5"/>
+            <property name="hibernate.c3p0.max_size" value="200"/>
+            <property name="hibernate.c3p0.timeout" value="180"/>
+            <property name="hibernate.c3p0.max_statements" value="50"/>
+			
+		</properties>
+	</persistence-unit>
+</persistence>
